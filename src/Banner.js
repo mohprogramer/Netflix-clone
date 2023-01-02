@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import requests from './requests';
 import axios from './axios'
+import './Banner.css'
 
 const Banner = () => {
 
@@ -15,6 +16,14 @@ const Banner = () => {
         fetchData();
     }, [])
 
+    function ellipsify (str) {
+        if (str.length > 10) {
+            return (str.substring(0, 300) + "...");
+        }
+        else {
+        return str;
+    }
+    }
 
     return (
         <header 
@@ -27,12 +36,14 @@ const Banner = () => {
             backgroundPosition:"center center"
         }}
         >
-            <h1>{movie?.title || movie?.name || movie?.original_name}</h1>
-            <div>
-                <button className='banner_button'>Play</button>
-                <button className='banner_button'>My List</button>
+            <div className='banner_content'>
+                <h1  className='banner_title'>{movie?.title || movie?.name || movie?.original_name}</h1>
+                <div>
+                    <button className='banner_button'>Play</button>
+                    <button className='banner_button'>My List</button>
+                </div>
+                <h1 className='banner_description'>{ellipsify(String(movie?.overview))}</h1>
             </div>
-            <h1 className='banner_description'>{movie?.overview}</h1>
             
         </header>
     );
