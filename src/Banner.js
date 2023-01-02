@@ -44,6 +44,10 @@ const Banner = () => {
                 </div>
                 <h1 className='banner_description'>{ellipsify(String(movie?.overview))}</h1>
             </div>
+
+            <div className='banner_fadeBottom'>
+                
+            </div>
             
         </header>
     );

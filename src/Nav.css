@@ -1,0 +1,18 @@
+.navbar{
+    display: flex;
+    position: fixed;
+    top: 0;
+    padding: 20px;
+    width: 100%;
+    transition-timing-function:ease-in ;
+    transition: all 0.5s;
+}
+
+.nav_logo{
+    width: 80px;
+    object-fit: contain;
+}
+
+.nav_Black {
+    background-color: #111;
+}
